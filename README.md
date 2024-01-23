@@ -1,9 +1,9 @@
 # 广东政务服务网 Vuetify UI
 
-本例使用 Vuetify UI 重构广东政务服务网。
+本例使用 Vuetify UI 重构广东政务服务网，并通过 mockjs 和 Axios 模拟 HTTP 请求。
 
 - [广东政务服务网（原网页）](https://www.gdzwfw.gov.cn/)
-- [广东政务服务网 Vuetify UI](/)
+- [广东政务服务网 Vuetify UI](https://keepenthusiasmlearning.github.io/gd-government/)
 
 ## 技术栈
 
@@ -11,33 +11,31 @@
 | ----------------------- | ----------- |
 | Vue                     | 渐进式 JavaScript 框架，实现双向绑定 |
 | Vue Router              | 路由 |
-| Material Design         | Google 设计规范 |
 | Vuetify                 | 实现 Material 的 UI 库 |
+| Axios                   | 基于 promise 的网络请求库 |
 | mockjs、vite-plugin-mock | 拦截 Ajax 请求, 生成模拟数据 |
-| sass、scss               | |
 
 ## 项目目录
 
 ```
 mock
-|- mockProdServer     - 引入和创建 mockjs
-|- homeMock           - 定义 home mock 数据
-|- ...moreMock        - 定义其他 mock 数据
+|- mock_home            - 定义 mock 数据
 src  
-|- assets             - 静态数据，背景、logo、img
+|- assets               - 静态数据：background-image、logo、img
+|- mock-prod-server     - 引入和创建 mockjs
 |- components
 |  |- footer.vue
 |  └- header.vue
 |- router
 |  └- index.vue
 |- styles
-|  |- main.sass
-|  └- variable.scss
+|  |- main.sass         - 引入 scss 变量，初始化样式和通用类
+|  └- variable.scss     - 定义 scss 变量，包括：字体、行高、颜色
 |- util
-|  └- request.ts      - 引入 Axios 定义 request() 请求方法
+|  └- request.ts        - 引入 Axios 定义 request() 请求方法
 |- views
-|  |- home            - 定义主页
-|  └- ...moreView     - 定义其他页
+|  |- home              - 定义主页
+|  └- ...moreView       - 定义其他页
 |- App.vue
 └- main.ts
 ```

@@ -1,8 +1,6 @@
 <template>
   <v-app>
-    <router-view #="{ Component }">
-      <component :is="Component" />
-    </router-view>    
+    <router-view />
   <Footer />
   </v-app>
 </template>

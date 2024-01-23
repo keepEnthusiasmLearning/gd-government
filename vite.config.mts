@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue'
 import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig({
+  base: "/gd-government/",
   plugins: [
     vue(),
     viteMockServe({
@@ -20,6 +21,7 @@ export default defineConfig({
         `
     })
   ],
+  define: { 'process.env': {} },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
