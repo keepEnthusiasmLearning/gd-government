@@ -1,4 +1,4 @@
-# 广东政务服务网 Vuetify UI
+# 广东政务服务网
 
 本例使用 Vuetify UI 重构广东政务服务网，并通过 mockjs 和 Axios 模拟 HTTP 请求。
 
@@ -7,13 +7,13 @@
 
 ## 技术栈
 
-| Module                  | Description |
-| ----------------------- | ----------- |
-| Vue                     | 渐进式 JavaScript 框架，实现双向绑定 |
-| Vue Router              | 路由 |
-| Vuetify                 | 实现 Material 的 UI 库 |
-| Axios                   | 基于 promise 的网络请求库 |
-| mockjs、vite-plugin-mock | 拦截 Ajax 请求, 生成模拟数据 |
+| Module     | Description |
+| ---------- | ----------- |
+| Vue        | 渐进式 JavaScript 框架，实现双向绑定 |
+| Vue Router | 路由 |
+| Vuetify    | 实现 Material 的 UI 库 |
+| Axios      | 基于 promise 的网络请求库 |
+| mockjs     | 拦截 Ajax 请求, 生成模拟数据 |
 
 ## 项目目录
 
@@ -84,10 +84,10 @@ Home
 
 | Display | Module         | Component      | Description |
 | ------- | -------------- | -------------- | ----------- |
-| md      | toolbar        | links          | 隐藏工具栏右侧链接 |
-| xs      | toolbar        | tabs           | 隐藏工具栏导航选择卡 |
-| md      | toolbar hero   | universal item | 从双列变为单列布局 |
-| sm      | toolbar hero   | universal box  | 隐藏右侧信息栏 |
+| md      | header toolbar | links          | 隐藏工具栏右侧链接 |
+| xs      | header toolbar | tabs           | 隐藏工具栏导航选择卡 |
+| md      | header hero    | universal item | 从双列变为单列布局 |
+| sm      | header hero    | universal box  | 隐藏右侧信息栏 |
 | xs      | portal gallery | gallery card   | 放大美术画廊卡宽度 |
 | lg      | portal person  | service item   | 从双列变为四列布局 |
 | xs      | portal kstb    | all            | 隐藏 kstb 模块 |
@@ -96,6 +96,47 @@ Home
 | lg      | footer         | information    | 从双列变为四列布局, 增加列内边距 |
 | xs & sm | footer         | copyright      | 从 flex-row 变为 flex-column 布局 |
 
-### Vuetify Components
+### 请求数据
 
-本页用到的 Vuetify 组件。
+| Methods | Paths                 | Description |
+| ------- | --------------------- | ----------- |
+| GET     | /mock/popular         | 主视图热门搜索 |
+| GET     | /mock/universals      | 主视图右侧卡片：个人常用、法人常用 |
+| GET     | /mock/portal/gallerys | 门户画廊 |
+| GET     | /mock/portal/person   | 门户个人服务 |
+| GET     | /mock/portal/legal    | 门户法人服务 |
+| GET     | /mock/kstb            | 跨域通办、营商环境、便民服务 |
+| GET     | /mock/rating          | 政务服务好差评 |
+| GET     | /mock/news            | 政策新闻 |
+| GET     | /mock/footer          | 页脚 |
+
+-------------------------------------------------------------------------------------------------------
+
+## About Vuetify
+
+Vuetify 是一个国外流行的 UI 库，更贴合的实现 Vue 和 Goolgle Material Design。
+
+**工具类**
+
+Vuetify 定义的工具类实现 CSS 原子化设计，并且可通过 breakpoint 实现自适应。
+
+- `.d-flex-[]`、`.justify-[]`、`.aligin-[]` - 弹性布局
+- `.text-[]`、`.font-[]` - 文本与排版
+- `.pa-[]`、`.ma-[]` - 内外边距
+- `.none`、`.inline`、`.block` - 显示
+- `.float`、`.overflow`、`.rounded-[]`、`.elevation-[]` - 浮动、溢出、半径、海拔
+
+**丰富的组件**
+
+- 容器组件 VCards、VSheets 等
+- 导航式组件 VAppBar、VNavigationDrawers 等
+- 表单输入和控制组件 VForms、VInput 等
+- 布局组件 VContainer、VRow、VCol
+- 数据展示、选择组件、反馈式组件、图像和图标、选择器等
+
+**方便的指令**
+
+- VClickOutside - 外部点击
+- VIntersect - 交叉观察者
+- VMutate - 突变观察者
+- VResize、VRipple、VScroll、VTouch - 缩放、波纹、滚动、触摸
