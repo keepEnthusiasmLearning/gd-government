@@ -112,7 +112,7 @@ Home
 
 -------------------------------------------------------------------------------------------------------
 
-## About Vuetify
+## [About Vuetify](https://vuetifyjs.com/zh-Hans/)
 
 Vuetify 是一个国外流行的 UI 库，更贴合的实现 Vue 和 Goolgle Material Design。
 
